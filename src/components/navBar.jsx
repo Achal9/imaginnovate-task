@@ -56,8 +56,8 @@ export const NavBar = (() => {
                         <div className="dashboard-top">
                 <h2 style={{color:"orange"}}>Weather in your City</h2>
                 <div>
-                    <input type="text" value={city} onChange={handleChange} placeholder="Visakhapatnam" />
-                    <button onClick={handleSave} className="btn btn-warning">Search</button>
+                    <input type="text" value={city} onChange={handleChange}  />
+                    <button onClick={handleSave} >Search</button>
                     {loading && <div className="spinner"></div>}
                 </div>
             </div>
