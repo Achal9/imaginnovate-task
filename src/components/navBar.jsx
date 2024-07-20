@@ -17,12 +17,12 @@ export const NavBar = (() => {
         setLoading(false);
         report.length = 0;
     }
-     let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=15ca787f2d191cf1f09525804a2ce85d&q=${city}`;
-    
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=15ca787f2d191cf1f09525804a2ce85d&q=${city}`;
+
 
 
     const loadData = async () => {
-    
+
         try {
             const response = await axios.get(apiUrl);
             setError(null);
@@ -53,12 +53,14 @@ export const NavBar = (() => {
 
     return (
         <div className="container-div">
-                        <div className="dashboard-top">
-                <h2 style={{color:"orange"}}>Weather in your City</h2>
+            <div className="dashboard-top">
+                <h2 style={{ color: "orange" }}>Weather in your City</h2>
                 <div>
-                    <input type="text" value={city} onChange={handleChange}  />
+                    <input type="text" value={city} onChange={handleChange} />
                     <button onClick={handleSave} >Search</button>
-                    {loading && <div className="spinner"></div>}
+                    {loading && 
+                    <div className="spinner"></div>
+                    }
                 </div>
             </div>
             {loading && error == null && city.length > 0 ? (
